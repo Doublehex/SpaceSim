@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UniverseChunk : MonoBehaviour {
+public class UniverseChunk : ScriptableObject {
 
 	static Object starSprite = Resources.Load ("Sprites/BackgroundStar");
 	public int x, y;
@@ -13,7 +13,7 @@ public class UniverseChunk : MonoBehaviour {
 
 	public static UniverseChunk Create(int x, int y)
 	{
-		UniverseChunk chunk = new UniverseChunk ();
+		UniverseChunk chunk = ScriptableObject.CreateInstance("UniverseChunk") as UniverseChunk;
 
 		chunk.stars = new GameObject[20];
 		chunk.x = x;

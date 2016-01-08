@@ -21,9 +21,6 @@ public class Movement : MonoBehaviour {
 			float x =  Mathf.Clamp(rigidBody.velocity.x, -data.maxSpeed, data.maxSpeed);
 			rigidBody.velocity = new Vector2(x, y);
 
-			Debug.Log ("Speed X: " + x);
-			Debug.Log ("Speed Y: " + y);
-
 			movement = Vector3.zero;
 		}
 	}

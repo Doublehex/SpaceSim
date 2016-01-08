@@ -13,6 +13,7 @@ public class ShipData : MonoBehaviour {
 	public float maxSpeed = 3.0f;
 	public string image;
 	public string sprite;
+	public Vector3[] weaponPositions;
 	
 	public void loadShip(string title)
 	{
@@ -21,6 +22,10 @@ public class ShipData : MonoBehaviour {
 			maxSpeed = 5.0f;
 			image = "Images/Player Ship";
 			sprite = "Sprites/PlayerShip";
+
+			weaponPositions = new Vector3[2];
+			weaponPositions[0] = new Vector3(0.025f, 0.285f);
+			weaponPositions[1] = new Vector2(0.025f, -0.285f);
 
 			return;
 		}
