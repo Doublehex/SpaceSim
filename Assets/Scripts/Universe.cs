@@ -15,9 +15,7 @@ public class Universe : MonoBehaviour {
 
 		GenerateChunks ();
 
-		GameObject player = new GameObject ();
-		Ship playerShip = player.AddComponent<Ship> ();
-		playerShip.initializeMainPlayerShip ("DefaultShip");
+		Ship.CreatePlayerShip ("DefaultShip");
 	}
 
 	void GenerateChunks()

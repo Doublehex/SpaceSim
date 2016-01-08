@@ -1,11 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ShipData : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
 	
+	}
+
+	static Dictionary<string, string> ShipSprite = new Dictionary<string, string>
+	{
+		{"DefaultShip", "Sprites/PlayerShip"},
+	};
+
+	public static string SpriteForShip(string ship)
+	{
+		return ShipSprite [ship];
 	}
 
 	public float maxHealth = 100.0f;
@@ -24,8 +35,8 @@ public class ShipData : MonoBehaviour {
 			sprite = "Sprites/PlayerShip";
 
 			weaponPositions = new Vector3[2];
-			weaponPositions[0] = new Vector3(0.025f, 0.285f);
-			weaponPositions[1] = new Vector2(0.025f, -0.285f);
+			weaponPositions[0] = new Vector3(0.025f, 0.285f, -1.0f);
+			weaponPositions[1] = new Vector3(0.025f, -0.285f, -1.0f);
 
 			return;
 		}

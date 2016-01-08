@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UniverseChunk : ScriptableObject {
 
-	static Object starSprite = Resources.Load ("Sprites/BackgroundStar");
+	static Sprite starSprite = Resources.Load<Sprite> ("Images/Background Star");
 	public int x, y;
 	GameObject[] stars;
 	public bool Loaded;
@@ -30,11 +30,15 @@ public class UniverseChunk : ScriptableObject {
 		//Random.seed = 987654321;
 		
 		for (int i = 0; i < Random.Range(10, 20); i++) {
-			stars [i] = GameObject.Instantiate (starSprite) as GameObject;
+			stars [i] = new GameObject();
+			SpriteRenderer renderer = stars [i].AddComponent<SpriteRenderer>();
+			renderer.sprite = starSprite;
+			stars[i].name = "Background Star";
+
 			scale = Random.Range (0.1f, 0.75f);
 			stars [i].transform.localScale = new Vector3 (scale, scale);
-			stars [i].transform.position = new Vector3 ((x * 20) + Random.Range (0, 20), (y * 20) + Random.Range (0, 20));
-			stars [i].gameObject.GetComponent<SpriteRenderer>().sortingOrder = -99;
+			stars [i].transform.position = new Vector3 ((x * 20) + Random.Range (0, 20), (y * 20) + Random.Range (0, 20), 99);
+			//stars [i].gameObject.GetComponent<SpriteRenderer>().sortingOrder = -99;
 		}
 	}
 

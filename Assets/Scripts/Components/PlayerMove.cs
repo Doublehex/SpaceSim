@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour {
 		}
 
 		gameObject.GetComponent<Movement> ().movement = v;
-		
+
 		Camera.main.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -50);
 	}
 }
