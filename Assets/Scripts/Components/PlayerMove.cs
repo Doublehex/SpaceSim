@@ -13,11 +13,11 @@ public class PlayerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+		/*Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
 		Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos);
 		lookPos = lookPos - gameObject.transform.position;
 		float angle = Mathf.Atan2(lookPos.y, lookPos.x) * Mathf.Rad2Deg;
-		gameObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		gameObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
 		
 		Vector3 v;
 		//Debug.Log (playerShip.transform.rotation.z);

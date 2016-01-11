@@ -55,7 +55,7 @@ public class Ship : MonoBehaviour {
 	public void initializeMainPlayerShip(string shipName)
 	{
 		gameObject.name = "Player";
-		gameObject.layer = LayerMask.NameToLayer ("Player");
+		//gameObject.layer = LayerMask.NameToLayer ("Player");
 		initializeShip (shipName);
 
 

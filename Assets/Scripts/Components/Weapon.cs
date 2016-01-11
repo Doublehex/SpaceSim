@@ -66,7 +66,7 @@ public class Weapon : MonoBehaviour {
 			Quaternion desired = Quaternion.AngleAxis(angle, Vector3.forward);
 			gameObject.transform.localRotation = Quaternion.RotateTowards(gameObject.transform.localRotation, desired, 1.0f * Time.deltaTime);
 
-			Debug.Log(angle);
+			//Debug.Log(angle);
 		}
 
 		if (firing) {
