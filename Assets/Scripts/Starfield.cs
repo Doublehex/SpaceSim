@@ -23,7 +23,7 @@ public class Starfield : MonoBehaviour {
 		points = new ParticleSystem.Particle[starsMax];
 		
 		for (int i = 0; i < starsMax; i++) {
-			points[i].position = new Vector3 (tx.position.x + Random.Range(-20.0f, 20.0f), tx.position.y + Random.Range(-20.0f, 20.0f), 0);
+			points[i].position = new Vector3 (tx.position.x + Random.Range(-20.0f, 20.0f), tx.position.y + Random.Range(-20.0f, 20.0f), 98.0f);
 			points[i].color = new Color(1,1,1, 1);
 			points[i].size = Random.Range(0.1f, 0.25f);
 		}

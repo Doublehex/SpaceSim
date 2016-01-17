@@ -49,13 +49,13 @@ public class Ship : MonoBehaviour {
 		weapons = new GameObject[data.weaponPositions.Length];
 
 		weapons [0] = Weapon.CreateWeapon ("Sprites/Weapon1", gameObject, data.weaponPositions[0]);
-		weapons [1] = Weapon.CreateWeapon ("Sprites/Weapon1", gameObject, data.weaponPositions[1]);
+		//weapons [1] = Weapon.CreateWeapon ("Sprites/Weapon1", gameObject, data.weaponPositions[1]);
 	}
 
 	public void initializeMainPlayerShip(string shipName)
 	{
 		gameObject.name = "Player";
-		//gameObject.layer = LayerMask.NameToLayer ("Player");
+		gameObject.layer = LayerMask.NameToLayer ("Player");
 		initializeShip (shipName);
 
 

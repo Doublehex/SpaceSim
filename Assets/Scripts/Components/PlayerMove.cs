@@ -21,11 +21,14 @@ public class PlayerMove : MonoBehaviour {
 		
 		Vector3 v;
 		//Debug.Log (playerShip.transform.rotation.z);
-		if (gameObject.transform.rotation.z >= 0.0f) {
+		/*if (gameObject.transform.rotation.z >= 0.0f) {
 			v = new Vector3 (Input.GetAxis ("Vertical"), -Input.GetAxis ("Horizontal"));
 		} else {
 			v = new Vector3 (Input.GetAxis ("Vertical"), Input.GetAxis ("Horizontal"));
-		}
+		}*/
+
+		v = new Vector3 (Input.GetAxis ("Vertical"), 0.0f);
+		transform.Rotate(0.0f, 0.0f, -Input.GetAxis ("Horizontal") * 2.0f);
 
 		gameObject.GetComponent<Movement> ().movement = v;
 
