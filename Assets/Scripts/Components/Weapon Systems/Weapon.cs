@@ -22,9 +22,8 @@ public class Weapon : MonoBehaviour
 		if (line == null) {
 			line = gameObject.AddComponent<LineRenderer> ();
 		}
-		//line = GetComponent<LineRenderer>();
+
 		line.SetVertexCount (2);
-		//Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
 		line.material = new Material (Shader.Find ("Custom/Vertex Colors"));
 		line.SetWidth (0.1f, 0.1f);
 		line.SetColors (Color.red, Color.red);
@@ -59,17 +58,8 @@ public class Weapon : MonoBehaviour
 		firing = false;
 	}
 
-	float ClampAngle (float angle, float min, float max)
-	{
-		if (angle < -360.0f)
-			angle += 360.0f;
-		if (angle > 360.0f)
-			angle -= 360.0f;
-		return Mathf.Clamp (angle, min, max);
-	}
-
 	// Update is called once per frame
-	void LateUpdate ()
+/*	void LateUpdate ()
 	{
 
 		if (activated) {
@@ -122,5 +112,5 @@ public class Weapon : MonoBehaviour
 		} else {
 			line.enabled = false;
 		}
-	}
+	}*/
 }

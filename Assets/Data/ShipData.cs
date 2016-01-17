@@ -11,7 +11,7 @@ public class ShipData : MonoBehaviour {
 
 	static Dictionary<string, string> ShipSprite = new Dictionary<string, string>
 	{
-		{"DefaultShip", "Sprites/PlayerShip"},
+		{"DefaultShip", "Sprites/PlayerShip1"},
 	};
 
 	public static string SpriteForShip(string ship)
@@ -32,7 +32,7 @@ public class ShipData : MonoBehaviour {
 			moveSpeed = 2.0f;
 			maxSpeed = 5.0f;
 			image = "Images/Player Ship";
-			sprite = "Sprites/PlayerShip";
+			sprite = "Sprites/PlayerShip1";
 
 			weaponPositions = new Vector3[2];
 			weaponPositions[0] = new Vector3(0.025f, 0.285f, -1.0f);

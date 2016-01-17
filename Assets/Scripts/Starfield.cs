@@ -37,9 +37,9 @@ public class Starfield : MonoBehaviour {
 		for (int i = 0; i < starsMax; i++) {
 
 			//Debug.Log (Vector3.Distance(points[i].position, tx.position));
-			if (Vector3.Distance(points[i].position, tx.position) > 50.0f)
+			if (Vector2.Distance(points[i].position, tx.position) > 50.0f)
 			{
-				points[i].position = new Vector3 (tx.position.x + Random.Range(-20.0f, 20.0f), tx.position.y + Random.Range(-20.0f, 20.0f), 0);
+				points[i].position = new Vector3 (tx.position.x + Random.Range(-20.0f, 20.0f), tx.position.y + Random.Range(-20.0f, 20.0f), 98.0f);
 			}
 			/*if ((points[i].position - tx.position).sqrMagnitude > starDistanceSqr) {
 				Debug.Log((points[i].position - tx.position).sqrMagnitude);
