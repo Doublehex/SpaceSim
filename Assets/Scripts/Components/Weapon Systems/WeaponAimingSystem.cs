@@ -8,37 +8,43 @@ public enum AimingType
 	Turret
 }
 
-public class WeaponAimingSystem : MonoBehaviour {
+public class WeaponAimingSystem : MonoBehaviour
+{
 
 	Vector3 original;
 	float rotationMin;
 	float rotationMax;
+	AimingType type;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		original = new Vector3 (0, 0, 0.0f);
 
 		rotationMax = 15.0f;
 		rotationMin = 15.0f;
 	}
 
-	void aimAtPoint(Vector3 point)
+	void aimAtPoint (Vector3 point)
 	{	
-		Vector3 dir = point - transform.position;
-		dir.Normalize ();
+		if (type == AimingType.Gimbal) {
+			Vector3 dir = point - transform.position;
+			dir.Normalize ();
 		
-		float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
+			float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
 		
-		Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
+			Quaternion desiredRot = Quaternion.Euler (0, 0, zAngle);
 		
-		transform.rotation = Quaternion.RotateTowards (transform.rotation, desiredRot, 60.0f * Time.deltaTime);
+			transform.rotation = Quaternion.RotateTowards (transform.rotation, desiredRot, 60.0f * Time.deltaTime);
 		
-		float clampedZRotation = Mathf.Clamp (transform.localEulerAngles.z, original.z - rotationMin, original.z + rotationMax);
-		transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y, clampedZRotation);
+			float clampedZRotation = Mathf.Clamp (transform.localEulerAngles.z, original.z - rotationMin, original.z + rotationMax);
+			transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y, clampedZRotation);
+		}
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 	
 
 	}
